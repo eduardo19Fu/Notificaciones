@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27fea37d-484b-4d50-aa17-4424129e2903">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     deudores_corte.`clave` AS deudores_corte_clave,
+     deudores_corte.`no_contador` AS deudores_corte_no_contador,
+     deudores_corte.`lectura_acumulada` AS deudores_corte_lectura_acumulada,
+     deudores_corte.`nombre` AS deudores_corte_nombre,
+     deudores_corte.`direccion` AS deudores_corte_direccion,
+     deudores_corte.`fecha_lectura` AS deudores_corte_fecha_lectura,
+     deudores_corte.`mes` AS deudores_corte_mes,
+     deudores_corte.`monto` AS deudores_corte_monto
+FROM
+     `deudores_corte` deudores_corte]]>
+	</queryString>
+	<field name="deudores_corte_clave" class="java.lang.String"/>
+	<field name="deudores_corte_no_contador" class="java.lang.String"/>
+	<field name="deudores_corte_lectura_acumulada" class="java.lang.Integer"/>
+	<field name="deudores_corte_nombre" class="java.lang.String"/>
+	<field name="deudores_corte_direccion" class="java.lang.String"/>
+	<field name="deudores_corte_fecha_lectura" class="java.sql.Timestamp"/>
+	<field name="deudores_corte_mes" class="java.lang.String"/>
+	<field name="deudores_corte_monto" class="java.math.BigDecimal"/>
+	<group name="deudores_corte_clave">
+		<groupExpression><![CDATA[$F{deudores_corte_clave}]]></groupExpression>
+	</group>
+	<group name="deudores_corte_mes">
+		<groupExpression><![CDATA[$F{deudores_corte_mes}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="77" y="13" width="100" height="20" uuid="507b3350-104d-4bea-bc14-38e29614fffc"/>
+				<textFieldExpression><![CDATA[$F{deudores_corte_clave}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="100" height="20" uuid="1f5a79bc-a4e8-42ef-a1dc-785d2622a4f2"/>
+				<textFieldExpression><![CDATA[$F{deudores_corte_no_contador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="34" y="41" width="100" height="20" uuid="a54cebbf-0348-4e7d-9e82-1793b67a8dcc"/>
+				<text><![CDATA[deudores_corte_mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="41" width="100" height="20" uuid="30bd6a35-61e5-4691-9d3e-ca6192c6ad66"/>
+				<text><![CDATA[deudores_corte_monto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="55" y="46" width="100" height="20" uuid="b9363cdb-53be-4c1e-ba14-52e3a8306d2b"/>
+				<textFieldExpression><![CDATA[$F{deudores_corte_mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="54" width="100" height="20" uuid="79d071fb-4dba-4043-a0e2-dc908ea6aff7"/>
+				<textFieldExpression><![CDATA[$F{deudores_corte_monto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
