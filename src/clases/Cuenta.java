@@ -5,6 +5,7 @@
  */
 package clases;
 
+import java.awt.List;
 import java.util.Date;
 
 /**
@@ -28,6 +29,9 @@ public class Cuenta {
     private String tipo;
     private String email;
 
+    public Cuenta() {
+    }
+    
     public Cuenta(int idcuenta, String clave, String direccion, String referencia, String no_contador, String identificacion, String voltios, String marchamo, 
                     String poste, int lecAcumulada, String lector, Date fechaLectura, String tipo, String email) {
         
@@ -47,8 +51,6 @@ public class Cuenta {
         this.email = email;
     }
 
-    public Cuenta() {
-    }
     
 
     public int getIdcuenta() {
@@ -162,8 +164,4 @@ public class Cuenta {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
-    
-    
 }
